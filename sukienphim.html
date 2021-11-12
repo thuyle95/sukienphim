@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="docReady()">
+    <img src="football_player_PNG20.png" id="bale" style="position: absolute; left: 0; top: 0; height: 200px; width: 100px;">
+    <script>
+            function docReady() {
+            window.addEventListener('keydown', moveSelection);
+            }
+            function moveSelection(evt) {
+            switch (evt.key) {
+                case "ArrowLeft":leftArrowPressed();
+                break;
+                case "ArrowRight":rightArrowPressed();
+                break;
+                case "ArrowUp":upArrowPressed();
+                break;
+                case "ArrowDown":downArrowPressed();
+            }
+        }
+        function upArrowPressed(){
+            let element = document.getElementById('bale');
+            element.style.top = parseInt(element.style.top) - 5 + 'px';
+        }
+        function downArrowPressed(){
+            let element= document.getElementById('bale');
+            element.style.top = parseInt(element.style.top) + 5 + 'px';
+        }
+        function leftArrowPressed(){
+            let element= document.getElementById('bale');
+            element.style.left = parseInt(element.style.left) - 5 + 'px';
+        }
+        function rightArrowPressed(){
+            let element= document.getElementById('bale');
+            element.style.left = parseInt(element.style.left) + 5 + 'px';
+        }
+    </script>
+</body>
+</html>
